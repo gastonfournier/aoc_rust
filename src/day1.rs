@@ -1,19 +1,27 @@
 use aoc_runner_derive::{aoc, aoc_generator};
 
-pub fn sample() {
-    let input: &str = "3   4
+#[cfg(test)]
+const SAMPLE_INPUT: &str = "3   4
 4   3
 2   5
 1   3
 3   9
 3   3
 ";
-    let (a, b) = parse_input_day1(input);
-    println!("{:#?}", a);
-    println!("{:#?}", b);
-    //println!("{}", solve_part1(&(a, b)));
+
+#[test]
+pub fn sample_part_1() {
+    let (a, b) = parse_input_day1(SAMPLE_INPUT);
+    println!("{}", solve_part1(&(a, b)));
+}
+
+#[test]
+pub fn sample_part_2() {
+    
+    let (a, b) = parse_input_day1(SAMPLE_INPUT);
     println!("{}", solve_part2(&(a, b)));
 }
+
 
 #[aoc_generator(day1)]
 pub fn parse_input_day1(input_v: &str) -> (Vec<i32>, Vec<i32>) {

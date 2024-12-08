@@ -1,6 +1,3 @@
-use aoc_2024::day1;
-
 fn main() {
-    day1::sample();
-    println!("DONE");
+    println!("Just run `cargo aoc` from the terminal");
 }
