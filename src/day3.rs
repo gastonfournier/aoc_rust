@@ -118,7 +118,7 @@ fn parse_input_2(input_v: &str) -> Vec<(i32,i32)> {
 
 #[aoc_generator(day3, part1)]
 fn parse_input(input_v: &str) -> Vec<(i32,i32)> {
-    let state = vec!["m", "u", "l", "(", "[0-9]+", ",", "[0-9]+", ")"];
+    let state = ["m", "u", "l", "(", "[0-9]+", ",", "[0-9]+", ")"];
     let mut muls: Vec<(i32, i32)> = Vec::new();
     let mut at = 0;
     let mut a: Option<i32> = None;
@@ -171,11 +171,11 @@ fn parse_input(input_v: &str) -> Vec<(i32,i32)> {
 
 #[aoc(day3, part1)]
 fn solve_part1(mults: &Vec<(i32, i32)>) -> i32 {
-    mults.into_iter().fold(0, |acc, (a,b)| acc + a * b)
+    mults.iter().fold(0, |acc, (a,b)| acc + a * b)
 }
 
 #[aoc(day3, part2)]
 fn solve_part2(mults: &Vec<(i32, i32)>) -> i32 {
-    mults.into_iter().fold(0, |acc, (a,b)| acc + a * b)
+    mults.iter().fold(0, |acc, (a,b)| acc + a * b)
 }
 

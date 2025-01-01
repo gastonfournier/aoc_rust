@@ -57,20 +57,20 @@ fn is_safe(report: &Vec<i32>) -> Option<usize> {
                 return Some(i);
             }
         }
-        prev = Some(level.clone());
+        prev = Some(level);
     }
     //println!("{:?} SAFE", report);
     Option::<usize>::None
 }
 
 #[aoc(day2, part1)]
-fn solve_part1(reports: &Vec<Vec<i32>>) -> i32 {
+fn solve_part1(reports: &[Vec<i32>]) -> i32 {
     let safe : Vec<bool> = reports.iter().map(is_safe).map(|idx| idx.is_none()).collect();
     safe.into_iter().filter(|&x| x).count() as i32
 }
 
 #[aoc(day2, part2)]
-fn solve_part2(reports: &Vec<Vec<i32>>) -> i32 {
+fn solve_part2(reports: &[Vec<i32>]) -> i32 {
     let safe : Vec<bool> = reports.iter().map(|r|  {
         let safe = is_safe(r);
         if safe.is_some() {
